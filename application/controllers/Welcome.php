@@ -19,8 +19,13 @@ class Welcome extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index()
-	{
-		$data['content'] = 'keamanan/form_laporan_kehilangan';
-		$this->load->view('keamanan/layout/wrapper', $data);
-	}
+    {
+        if ($this->session->userdata('aktor') == "Biro Keamanan") {
+            redirect('keamanan/laporan');
+        } else if ($this->session->userdata('aktor') == "User") {
+            redirect('user/laporan');
+        } else {
+            $this->load->view('login_view');
+        }
+    }
 }

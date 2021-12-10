@@ -49,7 +49,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <a href="#" class="nav-link" style="color:#fff;">Halaman Beranda</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link" style="color:#fff;">Logout</a>
+                            <a href="<?php echo base_url() ?>Auth/logout" class="nav-link" style="color:#fff;">Logout</a>
                         </li>
                     </ul>
                     <!-- Notifications Dropdown Menu -->
@@ -91,7 +91,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- /.content-wrapper -->
 
         <!-- Main Footer -->
-        
+
         <footer class="main-footer navbar-nav navbar-no-expand" style="background-color: #5000b3;">
             <!-- To the right -->
             <div class="float-right d-none d-sm-inline container-md" style="">
@@ -122,10 +122,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="<?php echo base_url('assets') ?>/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="<?php echo base_url('assets') ?>/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- bs-custom-file-input -->
+    <script src="<?php echo base_url('assets') ?>/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
     <!-- AdminLTE App -->
     <script src="<?php echo base_url('assets') ?>/dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="<?php echo base_url('assets') ?>/dist/js/demo.js"></script>
+
+    <script>
+        $(function() {
+            bsCustomFileInput.init();
+        });
+    </script>
 </body>
 
 </html>

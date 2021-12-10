@@ -46,18 +46,30 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>X</td>
-                                        <td>X</td>
-                                        <td>X</td>
-                                        <td>X</td>
-                                        <td>X</td>
-                                        <td>X</td>
-                                        <td>X</td>
-                                        <td>X</td>
-                                        <td>X</td>
-                                        <td>X</td>
-                                    </tr>
+                                    <?php foreach ($laporan as $val) : ?>
+                                        <tr>
+                                            <td>K-<?php echo $val->id_laporan ?></td>
+                                            <td><?php echo date('d-m-Y : H:i:s', strtotime($val->tanggal_dan_waktu)) ?></td>
+                                            <td><?php echo $val->nama ?></td>
+                                            <td><?php echo $val->alamat ?></td>
+                                            <td><?php echo $val->no_identitas ?></td>
+                                            <td><?php echo $val->no_hp ?></td>
+                                            <td>
+                                                <?php if ($val->status == "Terkirim") : ?>
+                                                    <div class="btn btn-warning btn-xs">Terkirim</div>
+                                                <?php else : ?>
+                                                    <div class="btn btn-success btn-xs">Sudah Ditindak Lanjut</div>
+                                                <?php endif; ?>
+                                            </td>
+                                            <td><?php echo $val->permasalahan ?></td>
+                                            <td><?php echo $val->solusi ?></td>
+                                            <td>
+                                                <?php if ($val->bukti_solusi) : ?>
+                                                    <a href="<?php echo base_url() ?>user/laporan/download_bukti_solusi/<?php echo $val->id_laporan ?>">Lihat Bukti Solusi</a>
+                                                <?php endif; ?>
+                                            </td>
+                                        </tr>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>
