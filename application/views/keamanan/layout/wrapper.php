@@ -94,7 +94,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <footer class="main-footer navbar-nav navbar-no-expand" style="background-color: #5000b3;">
             <!-- To the right -->
-            <div class="float-right d-none d-sm-inline container-md" style="">
+            <div class="float-right d-none d-sm-inline container-md">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a href="#" class="nav-link" style="color:#fff;">Contact</a>
